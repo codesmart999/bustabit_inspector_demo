@@ -1,0 +1,33 @@
+{
+  "name": "Bustabit Inspector",
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "64": "icon64.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Bustabit Inspector",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "64": "icon64.png",
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://bustabit.com/play"],
+      "js": ["content.js"],
+      "sandbox": {
+        "allow-same-origin": true
+      }
+    }
+  ],
+  "permissions": ["activeTab", "storage"]
+}
